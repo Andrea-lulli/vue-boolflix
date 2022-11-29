@@ -8,10 +8,10 @@
         alt="..."
       />
       <div class="card-body">
-        <p class="titolo" >{{ CardFilm.title }}</p>
+        <p class="titolo" >Titolo: {{ CardFilm.title }}</p>
         <img class="bandiera" v-if="LinguaFilm.includes(CardFilm.original_language)" :src="`/img/${CardFilm.original_language}.png`" alt="">
         <div v-else class="lingua">{{ CardFilm.original_language }}</div>
-         <p class="lingua">{{ CardFilm.vote_average }}</p>
+         <p class="lingua">Voto: {{ CardFilm.vote_average }}</p>
       </div>
     </div>
   
@@ -43,6 +43,9 @@ div{
 .card-singole{
     flex-basis: 23%;
     margin: 10px 0;
+    color: white;
+    background-color: rgb(90, 88, 88);
+    padding: 10px;
 }
 
 .bandiera{

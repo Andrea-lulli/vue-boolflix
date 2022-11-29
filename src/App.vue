@@ -2,7 +2,7 @@
   <div id="app">
     <div class="row">
       <HeaderComp @inputSearch="nomeMethods" />
-      <button class="col-1 bg-primary" @click="SceltaFilm()">Cerca Film</button>
+      <button class="col-1 button-cerca" @click="SceltaFilm()">Cerca Film</button>
     </div>
     <MainComp :CardFilm="ListaFilm" />
   </div>
@@ -18,6 +18,7 @@ export default {
   components: {
     HeaderComp,
     MainComp,
+
   },
 
   data() {
@@ -49,4 +50,13 @@ export default {
 
 
 <style lang="scss">
+body{
+  background-color: rgb(6, 6, 6);
+}
+
+.button-cerca{
+  background-color: rgb(6, 6, 6);
+  color: white;
+  border: 1px solid white;
+}
 </style>
