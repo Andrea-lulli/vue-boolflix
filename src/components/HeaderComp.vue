@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="col-2">
     <div class="">
       <input
         type="Text"

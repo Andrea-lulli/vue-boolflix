@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <HeaderComp @inputSearch="nomeMethods" />
-    <MainComp />
+    <div class="row">
+      <HeaderComp @inputSearch="nomeMethods" />
+      <button class="col-1 bg-primary" @click="SceltaFilm()">Cerca Film</button>
+    </div>
+    <MainComp :CardFilm="ListaFilm" />
   </div>
 </template>
 
@@ -24,25 +27,26 @@ export default {
     };
   },
 
-  mounted() {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/movie/550?api_key=5e4cb44696283cc119534aa11856e842&query=" + this.SearchUtente)
-
-      .then((resp) => {
-        this.ListaFilm = resp.data;
-      });
-      
-      
-  },
+  mounted() {},
 
   methods: {
     nomeMethods(search) {
       this.SearchUtente = search;
     },
+
+    SceltaFilm() {
+      axios
+        .get(
+          `https://api.themoviedb.org/3/search/movie?api_key=5e4cb44696283cc119534aa11856e842&query=${this.SearchUtente}`
+        )
+        .then((resp) => {
+          (this.ListaFilm = resp.data.results), console.log(this.ListaFilm);
+        });
+    },
   },
 };
 </script>
+
 
 <style lang="scss">
 </style>
