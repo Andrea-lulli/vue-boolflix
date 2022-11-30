@@ -1,10 +1,18 @@
 <template>
   <div class="conteiner" >
+    <div class="col-12 m-5 text-center titolo">
+            <h1 >Film</h1>
+          </div>
     <CardComp v-for="(elem, index) in CardFilm"
           :key="index"
           :CardFilm="elem"/>
+          <div class="col-12 m-5 text-center titolo">
+            <h1 >Serie TV</h1>
+          </div>
 
-          <CardSerieComp/>
+          <CardSerieComp v-for="(elem) in CardSerie"
+          :key="elem.id"
+          :CardSerie="elem"/>/>
 
   </div>
 </template>
@@ -23,6 +31,7 @@ export default {
 
    props: {
     CardFilm: Array,
+    CardSerie: Array,
     
   },
 
@@ -37,5 +46,8 @@ export default {
     margin: 0 auto;
     justify-content: space-between;
    
+}
+.titolo{
+  color: white;
 }
 </style>

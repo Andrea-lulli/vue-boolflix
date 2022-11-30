@@ -2,9 +2,9 @@
   <div id="app">
     <div class="row">
       <HeaderComp @inputSearch="nomeMethods" />
-      <button class="col-1 button-cerca" @click="SceltaFilm()">Cerca</button>
+      <button class="col-1 button-cerca" @click="SceltaFilm(),SceltaSerie()">Cerca</button>
     </div>
-    <MainComp :CardFilm="ListaFilm" />
+    <MainComp :CardFilm="ListaFilm" :CardSerie="ListaSerie"/>
   </div>
 </template>
 
@@ -25,6 +25,7 @@ export default {
     return {
       SearchUtente: "",
       ListaFilm: "",
+      ListaSerie: "",
     };
   },
 
@@ -41,7 +42,19 @@ export default {
           `https://api.themoviedb.org/3/search/movie?api_key=5e4cb44696283cc119534aa11856e842&query=${this.SearchUtente}`
         )
         .then((resp) => {
-          (this.ListaFilm = resp.data.results), console.log(this.ListaFilm);
+          (this.ListaFilm = resp.data.results), 
+          console.log(this.ListaFilm);
+        });
+    },
+
+    SceltaSerie() {
+      axios
+        .get(
+          `https://api.themoviedb.org/3/search/tv?api_key=5e4cb44696283cc119534aa11856e842&query=${this.SearchUtente}`
+        )
+        .then((resp) => {
+          (this.ListaSerie = resp.data.results), 
+          console.log(this.ListaSerie);
         });
     },
   },
