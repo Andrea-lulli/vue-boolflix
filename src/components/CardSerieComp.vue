@@ -22,7 +22,12 @@
 
       <img class="bandiera" v-else :src="`/img/ue.png`" alt="" />
       
-      <p class="lingua">Voto: {{ CardSerie.vote_average }}</p>
+      <div class="d-flex">
+        <p>Voto:</p>
+        <div class="voto">
+          {{ Math.round(CardSerie.vote_average / 2) }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -67,4 +72,11 @@ div {
 .titolo {
   font-size: 12px;
 }
+
+.voto{
+  
+  margin: 0  2px;
+  font-size: 18px;
+}
+
 </style>

@@ -43,7 +43,8 @@ export default {
           `https://api.themoviedb.org/3/search/movie?api_key=5e4cb44696283cc119534aa11856e842&query=${this.SearchUtente}`
         )
         .then((resp) => {
-          (this.ListaFilm = resp.data.results), console.log(this.ListaFilm);
+          this.ListaFilm = resp.data.results;
+           console.log(this.ListaFilm);
         });
     },
 
@@ -53,7 +54,9 @@ export default {
           `https://api.themoviedb.org/3/search/tv?api_key=5e4cb44696283cc119534aa11856e842&query=${this.SearchUtente}`
         )
         .then((resp) => {
-          (this.ListaSerie = resp.data.results), console.log(this.ListaSerie);
+        this.ListaSerie = resp.data.results; 
+        console.log(this.ListaSerie);
+         
         });
     },
   },
