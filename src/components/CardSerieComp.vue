@@ -21,12 +21,19 @@
       />
 
       <img class="bandiera" v-else :src="`/img/ue.png`" alt="" />
-      
+
       <div class="d-flex">
         <p>Voto:</p>
-        <div class="voto mx-2">
-          {{ Math.round(CardSerie.vote_average / 2) }}/5
+        <div class="voto mx-2" v-for="(elem, index) in votiserie" :key="index">
+          &#9733;
         </div>
+        <span
+          class="stelle-vuote mx-2"
+          v-for="(elem, inde) in votimancanti"
+          :key="inde"
+        >
+          &#9734;
+        </span>
       </div>
     </div>
   </div>
@@ -41,7 +48,14 @@ export default {
   data() {
     return {
       LinguaFilmSerie: ["en", "it", "de", "es", "ja", "fr"],
+      votoFilm: "",
+      votiserie: "",
+      votimancanti: "",
     };
+  },
+  mounted() {
+    this.votiserie = Math.round(this.CardSerie.vote_average / 2);
+    this.votimancanti = 5 - this.votiserie;
   },
 };
 </script>
@@ -73,10 +87,16 @@ div {
   font-size: 12px;
 }
 
-.voto{
-  
-  margin: 0  2px;
+.voto {
+  color: yellow;
+  margin: 0 2px;
   font-size: 18px;
 }
 
+.stelle-vuote{
+  margin: 0 2px;
+  font-size: 18px;
+  color: white;
+
+}
 </style>

@@ -22,9 +22,16 @@
       <img class="bandiera" v-else :src="`/img/ue.png`" alt="" />
       <div class="d-flex">
         <p>Voto:</p>
-        <div class="voto mx-2">
-          {{ Math.round(CardFilm.vote_average / 2) }}/5
+        <div class="voto mx-2" v-for="(elem,index) in votifilm" :key="index">
+          &#9733;
         </div>
+        <span
+          class="stelle-vuote mx-2"
+          v-for="(elem, inde) in votimancanti"
+          :key="inde"
+        >
+          &#9734;
+        </span>
       </div>
     </div>
   </div>
@@ -39,9 +46,14 @@ export default {
   data() {
     return {
       LinguaFilm: ["en", "it", "de", "es", "ja", "fr"],
+      votifilm:'',
+      votimancanti: "",
     };
   },
-  mounted() {},
+  mounted() {
+    this.votifilm =  Math.round(this.CardFilm.vote_average / 2)
+    this.votimancanti = 5 - this.votifilm;
+  },
 
   methods: {},
 };
@@ -75,5 +87,12 @@ div {
 .voto {
   margin: 0 2px;
   font-size: 18px;
+  color: yellow;
+}
+.stelle-vuote{
+  margin: 0 2px;
+  font-size: 18px;
+  color: white;
+
 }
 </style>
