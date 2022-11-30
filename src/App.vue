@@ -2,9 +2,11 @@
   <div id="app">
     <div class="row">
       <HeaderComp @inputSearch="nomeMethods" />
-      <button class="col-1 button-cerca" @click="SceltaFilm(),SceltaSerie()">Cerca</button>
+      <button class="col-1 button-cerca" @click="SceltaFilm(), SceltaSerie()">
+        Cerca
+      </button>
     </div>
-    <MainComp :CardFilm="ListaFilm" :CardSerie="ListaSerie"/>
+    <MainComp :CardFilm="ListaFilm" :CardSerie="ListaSerie" />
   </div>
 </template>
 
@@ -18,7 +20,6 @@ export default {
   components: {
     HeaderComp,
     MainComp,
-
   },
 
   data() {
@@ -42,8 +43,7 @@ export default {
           `https://api.themoviedb.org/3/search/movie?api_key=5e4cb44696283cc119534aa11856e842&query=${this.SearchUtente}`
         )
         .then((resp) => {
-          (this.ListaFilm = resp.data.results), 
-          console.log(this.ListaFilm);
+          (this.ListaFilm = resp.data.results), console.log(this.ListaFilm);
         });
     },
 
@@ -53,8 +53,7 @@ export default {
           `https://api.themoviedb.org/3/search/tv?api_key=5e4cb44696283cc119534aa11856e842&query=${this.SearchUtente}`
         )
         .then((resp) => {
-          (this.ListaSerie = resp.data.results), 
-          console.log(this.ListaSerie);
+          (this.ListaSerie = resp.data.results), console.log(this.ListaSerie);
         });
     },
   },
@@ -63,11 +62,11 @@ export default {
 
 
 <style lang="scss">
-body{
-  background-color: rgb(6, 6, 6)!important;
+body {
+  background-color: rgb(6, 6, 6) !important;
 }
 
-.button-cerca{
+.button-cerca {
   background-color: rgb(6, 6, 6);
   color: white;
   border: 1px solid white;
