@@ -24,8 +24,8 @@
       
       <div class="d-flex">
         <p>Voto:</p>
-        <div class="voto">
-          {{ Math.round(CardSerie.vote_average / 2) }}
+        <div class="voto mx-2">
+          {{ Math.round(CardSerie.vote_average / 2) }}/5
         </div>
       </div>
     </div>

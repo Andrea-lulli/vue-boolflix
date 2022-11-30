@@ -1,10 +1,10 @@
 <template>
   <div class="conteiner">
-    <div class="col-12 m-5 text-center titolo">
+    <div class="col-12  text-center titolo">
       <h1>Film</h1>
     </div>
     <CardComp v-for="(elem, index) in CardFilm" :key="index" :CardFilm="elem" />
-    <div class="col-12 m-5 text-center titolo">
+    <div class="col-12  text-center titolo">
       <h1>Serie TV</h1>
     </div>
 
@@ -45,5 +45,6 @@ export default {
 }
 .titolo {
   color: white;
+  margin: 20px 0;
 }
 </style>

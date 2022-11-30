@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <div class="row">
+    <header class="row ">
       <HeaderComp @inputSearch="nomeMethods" />
-      <button class="col-1 button-cerca" @click="SceltaFilm(), SceltaSerie()">
+      <button class="col-auto button-cerca" @click="SceltaFilm(), SceltaSerie()" >
         Cerca
       </button>
-    </div>
+    </header>
     <MainComp :CardFilm="ListaFilm" :CardSerie="ListaSerie" />
   </div>
 </template>
@@ -73,5 +73,11 @@ body {
   background-color: rgb(6, 6, 6);
   color: white;
   border: 1px solid white;
+  margin: 3px;
+}
+
+header{
+  padding: 10px;
+  background-color: rgb(30, 29, 29);
 }
 </style>

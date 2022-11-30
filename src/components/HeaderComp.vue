@@ -1,7 +1,10 @@
 <template>
-  <div class="col-2">
-    <div class="">
-      <input
+  <div class="col-11 d-flex">
+    <div class="col-8">
+      <h2 class="text-light">Booflix</h2>
+    </div>
+    <div class="col-4">
+      <input placeholder="Inserisci testo"
         type="Text"
         class="form-control"
         id="exampleInputEmail1"
