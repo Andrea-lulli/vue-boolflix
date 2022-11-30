@@ -12,7 +12,7 @@
       v-for="elem in CardSerie"
       :key="elem.id"
       :CardSerie="elem"
-    />/>
+    />
   </div>
 </template>
 
