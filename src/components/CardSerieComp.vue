@@ -9,20 +9,19 @@
       v-else
       :src="`http://image.tmdb.org/t/p/w342/${CardSerie.backdrop_path}`"
       class="card-img-top"
-      alt="..."
-    />
+      alt="...">
     <div class="card-body">
       <p class="titolo">Titolo: {{ CardSerie.name }}</p>
       <img
         class="bandiera"
         v-if="LinguaFilmSerie.includes(CardSerie.original_language)"
         :src="`/img/${CardSerie.original_language}.png`"
-        alt=""
-      />
+        alt="">
       <div v-else class="lingua">{{ CardSerie.original_language }}</div>
       <p class="lingua">Voto: {{ CardSerie.vote_average }}</p>
     </div>
   </div>
+ 
 </template>
 
 <script>
@@ -44,16 +43,17 @@ export default {
 div {
   img {
     width: 100%;
-    aspect-ratio: 2/1;
+    aspect-ratio: 3/2;
   }
 }
 
 .card-singole {
-  flex-basis: 23%;
+  width: calc((100%/4) - 10px);
   margin: 10px 0;
   color: white;
   background-color: rgb(90, 88, 88);
   padding: 10px;
+  gap: 10px;
 }
 
 .bandiera {
