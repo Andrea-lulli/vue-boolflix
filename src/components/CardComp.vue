@@ -17,7 +17,7 @@
         :src="`/img/${CardFilm.original_language}.png`"
         alt=""
       />
-      <div v-else class="lingua">{{ CardFilm.original_language }}</div>
+      <img class="bandiera" v-else :src="`/img/ue.png`" alt="" />
       <p class="lingua">Voto: {{ CardFilm.vote_average }}</p>
     </div>
   </div>
