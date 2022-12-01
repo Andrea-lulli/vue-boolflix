@@ -31,8 +31,8 @@ export default {
   data() {
     return {
       SearchUtente: "",
-      ListaFilm: "",
-      ListaSerie: "",
+      ListaFilm: [],
+      ListaSerie: [],
     };
   },
 

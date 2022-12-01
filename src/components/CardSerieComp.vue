@@ -35,8 +35,8 @@
         </div>
         <span
           class="stelle-vuote mx-2"
-          v-for="(elem, inde) in votimancanti"
-          :key="inde"
+          v-for="(elem, index) in votimancanti"
+          :key="index + 55"
         >
           &#9734;
         </span>

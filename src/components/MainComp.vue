@@ -13,7 +13,7 @@
       <h1>Serie TV</h1>
     </div>
     <!-- card serie tv  -->
-    <CardSerieComp v-for="elem in CardSerie" :key="elem.id" :CardSerie="elem" />
+    <CardSerieComp v-for="(elem) in CardSerie" :key="elem.id" :CardSerie="elem" />
   </div>
 </template>
 
