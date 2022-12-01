@@ -18,9 +18,10 @@
     <!-- copnteiner bandiere e stelle -->
     <div class="card-end">
       <!-- titolo -->
-      <p class="titolo">Titolo: {{ CardSerie.title }}</p>
+      <p class="titolo"> <strong class="">Titolo:</strong>  {{ CardSerie.name }}</p>
 
       <!-- bandiere  -->
+      <span><strong>Lingua:</strong></span>
       <img
         class="bandiera"
         v-if="LinguaFilmSerie.includes(CardSerie.original_language)"
@@ -31,7 +32,7 @@
 
       <!-- voto con stelle -->
       <div class="d-flex">
-        <p>Voto:</p>
+        <p> <strong>Voto:</strong> </p>
         <div class="voto mx-2" v-for="(elem, index) in votiserie" :key="index">
           &#9733;
         </div>
@@ -45,7 +46,9 @@
       </div>
 
       <!-- descrizione film  -->
-      <p class="descrizione">Overview: {{ CardSerie.overview }}</p>
+      <!-- descrizione film  -->
+      <p class="descrizione" v-if="CardSerie.overview == '' "><strong>Overview:</strong>  Nessuna Descrizione</p>
+      <p class="descrizione" v-else><strong>Overview:</strong>  {{ CardSerie.overview }}</p>
     </div>
   </div>
 </template>
@@ -89,7 +92,7 @@ div {
 
 .bandiera {
   width: 15%;
-  margin: 5px 0;
+  margin: 5px 10px;
 }
 .titolo {
   font-size: 18px;
