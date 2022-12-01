@@ -41,6 +41,7 @@ export default {
   methods: {
     nomeMethods(search) {
       this.SearchUtente = search;
+      
     },
 
     SceltaFilm() {
