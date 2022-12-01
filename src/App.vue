@@ -1,11 +1,17 @@
 <template>
   <div id="app">
-    <header class="row ">
+    <!-- header -->
+    <header class="row">
       <HeaderComp @inputSearch="nomeMethods" />
-      <button class="col-auto button-cerca" @click="SceltaFilm(), SceltaSerie()" >
+      <button
+        class="col-auto button-cerca"
+        @click="SceltaFilm(), SceltaSerie()"
+      >
         Cerca
       </button>
     </header>
+
+    <!-- main -->
     <MainComp :CardFilm="ListaFilm" :CardSerie="ListaSerie" />
   </div>
 </template>
@@ -44,7 +50,7 @@ export default {
         )
         .then((resp) => {
           this.ListaFilm = resp.data.results;
-           console.log(this.ListaFilm);
+          console.log(this.ListaFilm);
         });
     },
 
@@ -54,9 +60,8 @@ export default {
           `https://api.themoviedb.org/3/search/tv?api_key=5e4cb44696283cc119534aa11856e842&query=${this.SearchUtente}`
         )
         .then((resp) => {
-        this.ListaSerie = resp.data.results; 
-        console.log(this.ListaSerie);
-         
+          this.ListaSerie = resp.data.results;
+          console.log(this.ListaSerie);
         });
     },
   },
@@ -76,7 +81,7 @@ body {
   margin: 3px;
 }
 
-header{
+header {
   padding: 10px;
   background-color: rgb(30, 29, 29);
 }

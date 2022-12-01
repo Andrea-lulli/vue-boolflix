@@ -1,18 +1,19 @@
 <template>
   <div class="conteiner">
-    <div class="col-12  text-center titolo">
+    <!-- titolo film -->
+    <div class="col-12 text-center titolo">
       <h1>Film</h1>
     </div>
+
+    <!-- card film -->
     <CardComp v-for="(elem, index) in CardFilm" :key="index" :CardFilm="elem" />
-    <div class="col-12  text-center titolo">
+
+    <!-- titolo serie tv -->
+    <div class="col-12 text-center titolo">
       <h1>Serie TV</h1>
     </div>
-
-    <CardSerieComp
-      v-for="elem in CardSerie"
-      :key="elem.id"
-      :CardSerie="elem"
-    />
+    <!-- card serie tv  -->
+    <CardSerieComp v-for="elem in CardSerie" :key="elem.id" :CardSerie="elem" />
   </div>
 </template>
 

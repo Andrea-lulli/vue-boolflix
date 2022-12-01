@@ -1,5 +1,7 @@
 <template>
   <div class="card-singole">
+
+    <!-- poster dei film  -->
     <img
       class=""
       v-if="CardFilm.backdrop_path == null"
@@ -11,7 +13,11 @@
       class="card-img-top"
       alt="..."
     />
+
+    <!-- copnteiner bandiere e stelle -->
     <div class="card-body">
+
+      <!-- bandiere  -->
       <p class="titolo">Titolo: {{ CardFilm.title }}</p>
       <img
         class="bandiera"
@@ -20,9 +26,11 @@
         alt=""
       />
       <img class="bandiera" v-else :src="`/img/ue.png`" alt="" />
+
+      <!-- voto con stelle -->
       <div class="d-flex">
         <p>Voto:</p>
-        <div class="voto mx-2" v-for="(elem,index) in votifilm" :key="index">
+        <div class="voto mx-2" v-for="(elem, index) in votifilm" :key="index">
           &#9733;
         </div>
         <span
@@ -46,12 +54,12 @@ export default {
   data() {
     return {
       LinguaFilm: ["en", "it", "de", "es", "ja", "fr"],
-      votifilm:'',
+      votifilm: "",
       votimancanti: "",
     };
   },
   mounted() {
-    this.votifilm =  Math.round(this.CardFilm.vote_average / 2)
+    this.votifilm = Math.round(this.CardFilm.vote_average / 2);
     this.votimancanti = 5 - this.votifilm;
   },
 
@@ -89,10 +97,9 @@ div {
   font-size: 18px;
   color: yellow;
 }
-.stelle-vuote{
+.stelle-vuote {
   margin: 0 2px;
   font-size: 18px;
   color: white;
-
 }
 </style>

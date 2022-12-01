@@ -1,8 +1,12 @@
 <template>
   <div class="col-11 d-flex">
+
+    <!-- lodo del sito -->
     <div class="col-8">
       <h2 class="text-light">Booflix</h2>
     </div>
+
+    <!-- input di ricerca film e serie  -->
     <div class="col-4">
       <input placeholder="Inserisci testo"
         type="Text"

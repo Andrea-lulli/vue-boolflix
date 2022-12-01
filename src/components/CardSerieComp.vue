@@ -1,5 +1,6 @@
 <template>
   <div class="card-singole">
+    <!-- poster dei film  -->
     <img
       class=""
       v-if="CardSerie.backdrop_path == null"
@@ -11,8 +12,12 @@
       class="card-img-top"
       alt="..."
     />
+
+    <!-- copnteiner bandiere e stelle -->
     <div class="card-body">
       <p class="titolo">Titolo: {{ CardSerie.name }}</p>
+
+      <!-- bandiere  -->
       <img
         class="bandiera"
         v-if="LinguaFilmSerie.includes(CardSerie.original_language)"
@@ -20,6 +25,7 @@
         alt=""
       />
 
+      <!-- voto con stelle -->
       <img class="bandiera" v-else :src="`/img/ue.png`" alt="" />
 
       <div class="d-flex">
@@ -93,10 +99,9 @@ div {
   font-size: 18px;
 }
 
-.stelle-vuote{
+.stelle-vuote {
   margin: 0 2px;
   font-size: 18px;
   color: white;
-
 }
 </style>
