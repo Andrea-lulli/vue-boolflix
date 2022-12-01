@@ -88,6 +88,7 @@ div {
   color: white;
   gap: 20px;
   position: relative;
+  border: 2px solid white ;
 }
 
 .bandiera {
@@ -112,6 +113,7 @@ div {
   position: absolute;
   top: 0;
   left: 0;
+  padding: 7px;
 }
 
 .card-front {
@@ -119,7 +121,7 @@ div {
 }
 
 .card-noimage {
-  width: 55%;
+  width: 56.2%;
   display: block;
   margin-left: auto;
   margin-right: auto;
