@@ -43,6 +43,7 @@ export default {
   width: 80%;
   margin: 0 auto;
   justify-content: space-between;
+  padding-bottom: 50px;
 }
 .titolo {
   color: white;
